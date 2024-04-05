@@ -29,6 +29,8 @@ public class Tester {
 
         ListIterator<String> cursor = words.listIterator();
 
+
+
         System.out.println(cursor.next());
         System.out.println(cursor.next());
         System.out.println(cursor.next());
