@@ -6,6 +6,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -52,6 +53,9 @@ public class StreamIntro {
         Optional<String> largest = words.stream().max(String::compareToIgnoreCase);
         System.out.println("Largest: " + largest);
 
+    Stream<String> wordFlow = words.stream();
+
+    Map<Integer, String> lengthToString = wordFlow.collect(Collectors.toMap(String::length, s -> s));
 
 
     }
