@@ -27,7 +27,8 @@ public class CollectingStreamResults {
             //  Demonstrates Grouping and partitioning
         //groupingWithMapsExample();
 
-        reducingMapGroupsToValuesExample();
+            //  Demonstrates Downstream Collectors.
+        //reducingMapGroupsToValuesExample();
 
 
     }
@@ -123,7 +124,8 @@ public class CollectingStreamResults {
 
         //countElements(locales);
         //collectAmounts(cities);
-        findMaxValue(cities);
+        //findMaxValue(cities);
+        findTotalCityPop(cities);
 
 
 
@@ -182,8 +184,23 @@ public class CollectingStreamResults {
             v.ifPresent(System.out::print);
         });
                                  */
+    }
 
+    public static void findTotalCityPop(Stream<City> cities) {
+        Map<String, IntSummaryStatistics> stateToCityPopulationSummary = cities.collect(
+                groupingBy(City::state,
+                        summarizingInt(City::population)
+                )
+        );
 
+        stateToCityPopulationSummary.forEach( (k, v) -> {
+            System.out.print("\n" + k + ":\n");
+            System.out.println("\tcount:\t" + v.getCount());
+            System.out.println("\tsum:\t" + v.getSum());
+            System.out.println("\tavg:\t" + v.getAverage());
+            System.out.println("\tmin:\t" + v.getMin());
+            System.out.println("\tmax:\t" + v.getMax());
+        });
 
     }
 
