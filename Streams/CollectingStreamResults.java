@@ -3,9 +3,11 @@ package Streams;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.sql.Array;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+import Collections.TextFileReader;
 
 import static java.util.stream.Collectors.*;
 
@@ -30,7 +32,41 @@ public class CollectingStreamResults {
             //  Demonstrates Downstream Collectors.
         //reducingMapGroupsToValuesExample();
 
+        parallelTest();
+    }
 
+    public static void parallelTest() {
+
+        String fileName = "ParadiseLost.txt";
+        String stopWordsFile = "stopWords.txt.";
+
+
+        TextFileReader poemReader = new TextFileReader(fileName);
+        HashSet<String> stopWords = TextFileReader.getWords(stopWordsFile, ",");
+
+        List<String> lines = poemReader.getLines();
+        List<String> words = lines.stream()
+                .flatMap( l -> Arrays.stream((l.split(" "))))
+                .map( o -> (String) o)
+                .toList();
+
+        words.forEach(System.out::println);
+
+
+
+        var shortWords = new int[12];
+        words.parallelStream().forEach(
+                s -> { if ( s.length() < 12 ) shortWords[s.length()] ++; });
+        // Race Condition
+        System.out.println(Arrays.toString(shortWords));
+
+
+        /*
+        Map<Integer, Long> shortWordCounts = words.parallelStream()
+                .filter( s -> s.length() < 12 )
+                .collect( groupingBy( String::length, counting() ) );
+
+         */
     }
 
     // Demonstrates what toMap does if you have key conflicts.
