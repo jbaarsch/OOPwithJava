@@ -52,6 +52,13 @@ public class CollectingStreamResults {
 
         words.forEach(System.out::println);
 
+        Map<Character, Long> wordsByLetter = words.stream()
+                .filter(w -> w.length() != 4)
+                .collect(groupingBy(s-> s.charAt(0), counting())
+                );
+
+
+
 
 
         var shortWords = new int[12];
