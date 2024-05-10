@@ -3,7 +3,6 @@ package Streams;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.sql.Array;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -37,8 +36,8 @@ public class CollectingStreamResults {
 
     public static void parallelTest() {
 
-        String fileName = "ParadiseLost.txt";
-        String stopWordsFile = "stopWords.txt.";
+        String fileName = "text_files/ParadiseLost.txt";
+        String stopWordsFile = "text_files/stopWords.txt.";
 
 
         TextFileReader poemReader = new TextFileReader(fileName);
@@ -54,7 +53,7 @@ public class CollectingStreamResults {
 
         Map<Character, Long> wordsByLetter = words.stream()
                 .filter(w -> w.length() != 4)
-                .collect(groupingBy(s-> s.charAt(0), counting())
+                .collect(groupingBy(s-> s.isEmpty()? ' ' : s.charAt(0), counting())
                 );
 
 
@@ -163,7 +162,7 @@ public class CollectingStreamResults {
         Stream<Locale> locales = Stream.of(Locale.getAvailableLocales());
 
         // Generate Stream of Cities:
-        Stream<City> cities = readCities("cities.txt");
+        Stream<City> cities = readCities("text_files/cities.txt");
 
         //countElements(locales);
         //collectAmounts(cities);

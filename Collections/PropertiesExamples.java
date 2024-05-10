@@ -5,11 +5,10 @@ import java.io.OutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Properties;
-import java.util.logging.FileHandler;
-import java.util.logging.Logger;
 
 public class PropertiesExamples {
 
+    private static final String TEXT_DIRECTORY = "text_files/";
     public static void main(String[] args) throws IOException {
 
        // Logger logger = Logger.getLogger("OOPWithJava.Collections");

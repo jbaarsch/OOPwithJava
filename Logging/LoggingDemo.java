@@ -1,16 +1,16 @@
-package logging;
+package Logging;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.logging.*;
 import static java.util.logging.Level.*;  // FINER, FINE, INFO, WARNING, SEVERE
 //import static java.lang.System.Logger.Level.*;  // TRACE, DEBUG, INFO, WARNING, ERROR
 
 public class LoggingDemo {
-    private static final String logName = "%h/Documents/Work/UCA/CSCI 3381/githubrepo/loggingDemo.log";
+    private static final String logName = "logs/loggingDemo.log";
+    private static final String FILE_DIRECTORY =  "text_files/";
 
     public static void main(String[] args) throws IOException {
 
@@ -31,6 +31,8 @@ public class LoggingDemo {
             System.out.println("Please enter a file name and/or path to open: ");
             String fileName = in.nextLine();
             logger.log(INFO, "File name entered by user: " + fileName);
+            logger.log(INFO, "Adding text_files/ directory to file name");
+            fileName = FILE_DIRECTORY + fileName;
             try {
                 fileScan = new Scanner(new File(fileName));
                 fileNotFound = false;

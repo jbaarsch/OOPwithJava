@@ -4,9 +4,10 @@ import java.util.*;
 
 public class Tester {
 
+    public static final String TEXT_DIRECTORY = "text_files/";
     public static void main(String[] args) {
-        String fileName = "ParadiseLost.txt";
-        String stopWordsFile = "stopWords.txt.";
+        String fileName = TEXT_DIRECTORY + "ParadiseLost.txt";
+        String stopWordsFile = TEXT_DIRECTORY + "stopWords.txt.";
 
 
         TextFileReader poemReader = new TextFileReader(fileName);

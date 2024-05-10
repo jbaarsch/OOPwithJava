@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2024-05-10T21:03:10.531546700Z</date>
+  <millis>1715374990531</millis>
+  <nanos>546700</nanos>
+  <sequence>0</sequence>
+  <logger>OOPWithJava.Logging</logger>
+  <level>INFO</level>
+  <class>Logging.LoggingDemo</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>File name entered by user: test.dat</message>
+</record>
+<record>
+  <date>2024-05-10T21:03:10.559799800Z</date>
+  <millis>1715374990559</millis>
+  <nanos>799800</nanos>
+  <sequence>1</sequence>
+  <logger>OOPWithJava.Logging</logger>
+  <level>INFO</level>
+  <class>Logging.LoggingDemo</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Adding text_files/ directory to file name</message>
+</record>
+<record>
+  <date>2024-05-10T21:03:10.560798700Z</date>
+  <millis>1715374990560</millis>
+  <nanos>798700</nanos>
+  <sequence>2</sequence>
+  <logger>OOPWithJava.Logging</logger>
+  <level>INFO</level>
+  <class>Logging.LoggingDemo</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>File Found!</message>
+</record>
+<record>
+  <date>2024-05-10T21:03:10.565798900Z</date>
+  <millis>1715374990565</millis>
+  <nanos>798900</nanos>
+  <sequence>3</sequence>
+  <logger>OOPWithJava.Logging</logger>
+  <level>SEVERE</level>
+  <class>Logging.LoggingDemo</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>7589 cannot be squared in a short
+ Replacing with 32767</message>
+</record>
+<record>
+  <date>2024-05-10T21:03:10.567799400Z</date>
+  <millis>1715374990567</millis>
+  <nanos>799400</nanos>
+  <sequence>4</sequence>
+  <logger>OOPWithJava.Logging</logger>
+  <level>SEVERE</level>
+  <class>Logging.LoggingDemo</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Could not parse item into Short! 
+ Replacing with zero.</message>
+</record>
+</log>
