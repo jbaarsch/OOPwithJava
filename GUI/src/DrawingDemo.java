@@ -37,9 +37,6 @@ public class DrawingDemo {
             final int row1Y = 20, row2Y = 140, row3Y = 260, row4Y = 380;
 
 
-
-
-
                 // set the background white in order to see what we draw.
             this.setBackground(Color.white);
 
@@ -73,11 +70,13 @@ public class DrawingDemo {
             graphics.fillPolygon(Xs, Ys, numPts);
                 // Alternatively, you can create a Polygon separately add the points individually, and then use it as a
                 // parameter to the fillPolygon method.
-            //Polygon shape = new Polygon();
-            // shape.addPoint(triangleX + (int) (.5 * shapeSize), row2Y);
-            //shape.addPoint(triangleX, row2Y + shapeSize);
-            //shape.addPoint(triangleX + shapeSize, row2Y + shapeSize);
-            //graphics.fillPolygon(shape);
+                // There are some pre-built methods in the Polygon class related to the shape's bounds
+                // and whether the shape contains a point, that might be useful for other applications.
+                    Polygon shape = new Polygon();
+                    // shape.addPoint(triangleX + (int) (.5 * shapeSize), row2Y);
+                    //shape.addPoint(triangleX, row2Y + shapeSize);
+                    //shape.addPoint(triangleX + shapeSize, row2Y + shapeSize);
+                    //graphics.fillPolygon(shape);
 
                 // In addition to filled shapes, you can just draw the outline of the shape.
                 //graphics
@@ -94,6 +93,13 @@ public class DrawingDemo {
                 // of the line.
                 // The following draws a line across the panel between the two rows of shapes.
             graphics.drawLine(1, row2Y - 10, DrawingDemo.WIDTH - 1, row2Y -10 );
+                // You can also draw a Polyline, which is a line with multiple points, but the
+                // beginning and the end are not connected.  Polyline takes the same arguments as
+                // the Polygon.  Again, the only difference is that the first and last points are
+                // not connected.
+            int[] poly3Xs = {triangleX + (int) (.5 * shapeSize), triangleX, triangleX + shapeSize};
+            int[] poly3Ys = {row3Y, row3Y + shapeSize, row3Y + shapeSize};
+            graphics.drawPolyline(poly3Xs, poly3Ys, 3);
 
                 // It is also possible to draw text:
             graphics.drawString("This text is too small", squareX, row3Y);
