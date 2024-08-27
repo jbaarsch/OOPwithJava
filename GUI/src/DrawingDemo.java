@@ -12,7 +12,7 @@ public class DrawingDemo {
     public static void main(String[] args) {
 
         // Setting up the Frame and Panel
-        JFrame frame = new JFrame("Trying out colors");
+        JFrame frame = new JFrame("Trying out drawing");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         JPanel drawingPanel = new DrawingPanel();
         drawingPanel.setPreferredSize(new Dimension(WIDTH, HEIGHT));
