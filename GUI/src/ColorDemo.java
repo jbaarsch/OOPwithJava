@@ -27,19 +27,19 @@ public class ColorDemo {
             // EXPERIMENT WITH COLORS HERE!!!
         Color panelColor;
 
-            // Use a pre-defined constant Color:
+            // 1. Use a pre-defined constant Color:
             // There are several constants defined in the Color class representing common colors: red, green, blue, black,
             // white, green, yellow, cyan, dark_gray, gray, magenta, orange, and pink
         panelColor = Color.BLUE;
 
-            // OR we can customize a Color based on the rgb color-space
+            // OR 2. we can customize a Color based on the rgb color-space
             // Color vectors can be represented as rgb values; integers from 0 to 255;
         int red = 122, green = 25, blue = 155;
         panelColor = new Color(red, green, blue);
 
-            // ALTERNATIVELY, we can create our own static Color constants in a separate class and import them when we want.
+            // ALTERNATIVELY, 3. we can create our own static Color constants in a separate class and import
+            // them when we want.
         panelColor = Palette.BROWN;
-
 
             // There are several other methods associated with the Color class--try them out and see what they do!!!
             // Once a Color is defined, it is closed to being modified.  Instead, any changes will have to be saved as
@@ -47,9 +47,6 @@ public class ColorDemo {
         Color brighter = panelColor.brighter();
             // Alternatively, make the original color brighter by "saving" over it.
         //panelColor = panelColor.brighter();
-
-
-
 
         return panelColor;
     }
