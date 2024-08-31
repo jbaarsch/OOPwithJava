@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/GUI/GUI.iml" filepath="$PROJECT_DIR$/GUI/GUI.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/githubrepo.iml" filepath="$PROJECT_DIR$/.idea/githubrepo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/images/images.iml" filepath="$PROJECT_DIR$/images/images.iml" />
       <module fileurl="file://$PROJECT_DIR$/logs/logs.iml" filepath="$PROJECT_DIR$/logs/logs.iml" />
       <module fileurl="file://$PROJECT_DIR$/text_files/text_files.iml" filepath="$PROJECT_DIR$/text_files/text_files.iml" />
     </modules>
