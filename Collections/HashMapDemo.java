@@ -41,7 +41,7 @@ public class HashMapDemo {
         System.out.println(birthdays.get(yourName));
 
         // Another common operation on Maps, is to get all the entries and do something with them.  You can use an enhanced
-        // for loop to retrieve each entry and then use the .getKey() fuction to get the key of that entry, and the
+        // for loop to retrieve each entry and then use the .getKey() function to get the key of that entry, and the
         // .getValue() function to return the value in that entry.  Here I print out the key and the value for each
         // entry in the HashMap.
         for (Map.Entry<String, Date> entry : birthdays.entrySet()) {
