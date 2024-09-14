@@ -66,6 +66,7 @@ public class TextFieldDemo2 extends JPanel {
         // This function will get called to set the text on the panel--it will get called from
         // the actionPerformed function.
         public void setText(String text) {
+
             this.remove(innerDisplayPanel);
             innerDisplayPanel = new JPanel();
             innerDisplayPanel.setBackground(Color.magenta);
@@ -97,6 +98,9 @@ public class TextFieldDemo2 extends JPanel {
         frame.setVisible(true);
 
 
+    }
+    private double getValue() {
+        return 0.0;
     }
 
 

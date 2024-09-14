@@ -9,6 +9,7 @@ import static java.util.logging.Level.*;  // FINER, FINE, INFO, WARNING, SEVERE
 //import static java.lang.System.Logger.Level.*;  // TRACE, DEBUG, INFO, WARNING, ERROR
 
 public class LoggingDemo {
+
     private static final String logName = "logs/loggingDemo.log";
     private static final String FILE_DIRECTORY =  "text_files/";
 
