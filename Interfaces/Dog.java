@@ -24,9 +24,9 @@ public class Dog implements Speaker{
     private String name;
     private int age;
     private Color color;
-    private int size;
+    private DogSize size;
 
-    public Dog (String n, int a, Color c, int s) {
+    public Dog (String n, int a, Color c, DogSize s) {
         name = n;
         age = a;
         color = c;
@@ -35,9 +35,9 @@ public class Dog implements Speaker{
 
     public Dog () {
         name = "Fido";
-        age = 2;
+        age = 9;
         color = Color.WHITE;
-        size = 30;
+        size = DogSize.RETRIEVER;
     }
 
     public int getAge() {
@@ -48,11 +48,11 @@ public class Dog implements Speaker{
         this.age = age;
     }
 
-    public int getSize() {
+    public DogSize getSize() {
         return size;
     }
 
-    public void setSize(int size) {
+    public void setSize(DogSize size) {
         this.size = size;
     }
 
@@ -75,4 +75,27 @@ public class Dog implements Speaker{
     public String speak(){
         return "Bow-wow";
     }
+
+    public String toString() {
+        return "A " + size + ", " + age + "-year old dog named " + name;
+    }
+
+    public enum DogSize {
+        TOY_DOG("tiny"),
+        LAP_DOG("very small"),
+        SMALL_DOG("small"),
+        GUARD_DOG("medium"),
+        RETRIEVER("large"),
+        RESCUE_DOG("huge");
+
+        private final String name;
+
+        DogSize(String n) { name = n; }
+
+        public String toString() {
+            return name;
+        }
+    }
+
+
 }
