@@ -9,8 +9,8 @@ public class Kennel {
 
     public static void main(String[] args) {
 
-        demoSpeaker();
-        //demoComparisons();
+        //demoSpeaker();
+        demoComparisons();
 
     }
 
@@ -25,7 +25,7 @@ public class Kennel {
         noiseMakers[4] = new Car();
 
         for (Speaker s: noiseMakers)
-            System.out.println(s.speak());
+            System.out.println(s.getVolume());
 
     }
 
@@ -49,7 +49,7 @@ public class Kennel {
 
 
         //  Sort the dogs:  Arrays.sort will sort any collection that implements the Comparable Interface.
-        //Arrays.sort(dogs);
+        Arrays.sort(dogs);
         System.out.println("Dogs, alphabetically:");
         for (Dog d : dogs)
             System.out.println(d);
@@ -61,8 +61,8 @@ public class Kennel {
         // Comparator, which can be used to pass in a custom sort function.
         Comparator<Dog> dogSizer = new Comparator<Dog>() {
             @Override
-            public int compare(Dog o1, Dog o2) {
-                return o1.getSize().ordinal()-o2.getSize().ordinal();
+            public int compare(Dog dog1, Dog dog2) {
+                return dog1.getSize().ordinal()-dog2.getSize().ordinal();
             }
         };
         // Pass the list of dogs as well as the Comparator
@@ -76,18 +76,16 @@ public class Kennel {
 
         // Meh, now I want them arranged by age!
         // So, I just create a new comparator based on the age field.
-        Comparator<Dog> dogsByAge = new Comparator<Dog>() {
-            public int compare(Dog dog1, Dog dog2) {
-                return dog1.getAge() - dog2.getAge();
-            }
-        };
-        Arrays.sort(dogs, dogsByAge);
+        //Comparator<Dog> dogsByAge = new Comparator<Dog>() {
+          //  public int compare(Dog dog1, Dog dog2) {
+
+            //    return dog1.getAge() - dog2.getAge();
+           // }
+        //};
+        Arrays.sort(dogs, Comparator.comparingInt(Dog::getAge));
         System.out.println("Dogs, by Age:");
         for (Dog d : dogs)
             System.out.println(d);
-
-
-
     }
 
 

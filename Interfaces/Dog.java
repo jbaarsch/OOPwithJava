@@ -20,7 +20,7 @@ It should also test some of the functions.
 
 import java.awt.*;
 
-public class Dog implements Speaker{
+public class Dog implements Speaker, Comparable<Dog> {
     private String name;
     private int age;
     private Color color;
@@ -73,11 +73,17 @@ public class Dog implements Speaker{
     }
 
     public String speak(){
-        return "Bow-wow";
+        return"Bow-wow";
     }
 
     public String toString() {
         return "A " + size + ", " + age + "-year old dog named " + name;
+    }
+
+    @Override
+    // compares dogs by name
+    public int compareTo(Dog otherDog) {
+        return this.name.compareTo(otherDog.getName());
     }
 
     public enum DogSize {
