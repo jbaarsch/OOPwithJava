@@ -10,7 +10,8 @@ public class Kennel {
     public static void main(String[] args) {
 
         //demoSpeaker();
-        demoComparisons();
+        //demoComparisons();
+        demoSuperSubComparisons();
 
     }
 
@@ -88,5 +89,20 @@ public class Kennel {
             System.out.println(d);
     }
 
+    public void demoSuperSubComparisons() {
+        Animal[] animals = {
+                new Cat(),
+                new Dog(),
+                new Cat("Shadow", Cat.HairLength.SHORT_HAIR),
+                new Dog( "Spenser", 4, Color.WHITE, Dog.DogSize.SMALL_DOG),
+                new Cat("Levin", Cat.HairLength.LONG_HAIR),
+                new Dog("Zeus", 2, Color.GRAY, Dog.DogSize.RESCUE_DOG)
+        };
+
+
+
+
+
+    }
 
 }
