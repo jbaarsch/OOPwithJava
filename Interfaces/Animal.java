@@ -1,6 +1,6 @@
 package Interfaces;
 
-public abstract class Animal {
+public abstract class Animal implements Comparable<Animal>{
 
     private String name;
 
@@ -15,4 +15,8 @@ public abstract class Animal {
         name = n;
     }
 
+    @Override
+    public int compareTo(Animal o) {
+        return name.compareTo(o.getName());
+    }
 }

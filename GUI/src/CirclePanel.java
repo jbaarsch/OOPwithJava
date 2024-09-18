@@ -1,10 +1,15 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Arrays;
 
 public class CirclePanel extends JPanel {
 
     private Circle[] circles;
+
+    private JButton button;
+
 
     public CirclePanel() {
         this.setPreferredSize(new Dimension(500, 500));
@@ -14,6 +19,15 @@ public class CirclePanel extends JPanel {
         circles[2] = new Circle(0, 150 );
         circles[3] = new Circle(150, 150 );
         circles[4] = new Circle(200, 200 );
+        button = new JButton("Click Me");
+        button.addActionListener(e -> {
+            for (Circle c : circles)
+                c.setColor(Color.cyan);
+            revalidate();
+            repaint();
+        });
+
+        this.add(button);
 
     }
 
@@ -29,6 +43,17 @@ public class CirclePanel extends JPanel {
 
         }
 
+    }
+
+    private class ClickListener implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            for (Circle c : circles)
+                c.setColor(Color.cyan);
+            revalidate();
+            repaint();
+        }
     }
 
 

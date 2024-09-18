@@ -1,6 +1,6 @@
 package Interfaces;
 
-public class Cat extends Animal implements Speaker, Comparable<Cat> {
+public class Cat extends Animal implements Speaker {
 
     public enum HairLength { HAIRLESS, SHORT_HAIR, MEDIUM_HAIR, LONG_HAIR}
 
@@ -28,8 +28,11 @@ public class Cat extends Animal implements Speaker, Comparable<Cat> {
         this.hair = hair;
     }
 
-    public int compareTo(Cat otherCat) {
-        return hair.ordinal() - otherCat.hair.ordinal();
+    public int compareTo(Animal otherCat) {
+        if (otherCat instanceof Cat) {
+            return hair.ordinal() - ((Cat) otherCat).hair.ordinal();
+        } else
+            return super.compareTo(otherCat);
     }
 
 }

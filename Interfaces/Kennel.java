@@ -99,6 +99,11 @@ public class Kennel {
                 new Dog("Zeus", 2, Color.GRAY, Dog.DogSize.RESCUE_DOG)
         };
 
+        Arrays.sort(animals);
+
+        for (Animal a : animals)
+            System.out.println(a.getName());
+
 
 
 
