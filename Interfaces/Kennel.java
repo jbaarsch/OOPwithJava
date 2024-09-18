@@ -89,7 +89,7 @@ public class Kennel {
             System.out.println(d);
     }
 
-    public void demoSuperSubComparisons() {
+    public static void demoSuperSubComparisons() {
         Animal[] animals = {
                 new Cat(),
                 new Dog(),
@@ -98,6 +98,8 @@ public class Kennel {
                 new Cat("Levin", Cat.HairLength.LONG_HAIR),
                 new Dog("Zeus", 2, Color.GRAY, Dog.DogSize.RESCUE_DOG)
         };
+
+
 
 
 
