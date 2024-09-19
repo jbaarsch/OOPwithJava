@@ -40,6 +40,13 @@ public class Dog extends Animal implements Speaker {
         size = DogSize.RETRIEVER;
     }
 
+    public Dog(String name) {
+        super(name);
+        age = 1;
+        color = Color.blue;
+        size = DogSize.TOY_DOG;
+    }
+
     public int getAge() {
         return age;
     }
