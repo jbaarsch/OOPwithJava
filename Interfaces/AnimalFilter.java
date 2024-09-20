@@ -15,7 +15,7 @@ public class AnimalFilter {
 
         Map<String, Predicate<Animal>> filters = new HashMap<>();
         // S-Filter
-        filters.put( "S-Dogs", animal -> {return ( animal.getName().startsWith("S") && animal instanceof Dog);});
+        filters.put( "S-Dogs", animal -> ( animal.getName().startsWith("S") && animal instanceof Dog));
         // Long Names
         filters.put("Long Names", animal -> animal.getName().length() >= 6);
         // Four-Letter Words
