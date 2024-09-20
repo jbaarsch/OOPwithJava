@@ -64,7 +64,6 @@ public class AnimalListPanel extends JPanel{
         for ( String filter : filters.keySet()){
             JCheckBox box = new JCheckBox(filter);
             box.setFont(new Font("Arial", Font.BOLD, 30));
-            box.
             box.addItemListener(new ItemListener() {
                 @Override
                 public void itemStateChanged(ItemEvent e) {
