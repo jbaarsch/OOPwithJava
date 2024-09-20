@@ -15,14 +15,24 @@ public class AnimalFilter {
 
         Map<String, Predicate<Animal>> filters = new HashMap<>();
         // S-Filter
-        filters.put( "S-Dogs", animal -> ( animal.getName().startsWith("S") && animal instanceof Dog));
+        filters.put( "S-Dogs", getSDogFilter());
         // Long Names
-        filters.put("Long Names", animal -> animal.getName().length() >= 6);
+        filters.put("Long Names", getLongNameFilter());
         // Four-Letter Words
         filters.put("4-Letter Words", animal -> animal.getName().length() == 4);
 
         return filters;
     }
+
+    public static Predicate<Animal> getSDogFilter() {
+        return (animal) -> { return animal.getName().startsWith("S")
+                && animal instanceof Dog;} ;
+    }
+
+    public static Predicate<Animal> getLongNameFilter() {
+        return animal -> animal.getName().length() >= 6;
+    }
+
 
 
 
