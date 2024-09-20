@@ -1,6 +1,8 @@
 package Interfaces;
 
-public class Rooster implements Speaker{
+public class Rooster  implements Speaker{
+
+
 
 
     public String speak() {

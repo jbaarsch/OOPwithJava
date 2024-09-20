@@ -20,24 +20,31 @@ It should also test some of the functions.
 
 import java.awt.*;
 
-public class Dog implements Speaker, Comparable<Dog> {
-    private String name;
+public class Dog extends Animal implements Speaker {
+    //private String name;
     private int age;
     private Color color;
     private DogSize size;
 
     public Dog (String n, int a, Color c, DogSize s) {
-        name = n;
+        super(n);
         age = a;
         color = c;
         size = s;
     }
 
     public Dog () {
-        name = "Fido";
+        super("Fido");
         age = 9;
         color = Color.WHITE;
         size = DogSize.RETRIEVER;
+    }
+
+    public Dog(String name) {
+        super(name);
+        age = 1;
+        color = Color.blue;
+        size = DogSize.TOY_DOG;
     }
 
     public int getAge() {
@@ -65,11 +72,11 @@ public class Dog implements Speaker, Comparable<Dog> {
     }
 
     public void setName(String name) {
-        this.name = name;
+        super.setname(name);
     }
 
     public String getName() {
-        return name;
+        return super.getName();
     }
 
     public String speak(){
@@ -77,13 +84,13 @@ public class Dog implements Speaker, Comparable<Dog> {
     }
 
     public String toString() {
-        return "A " + size + ", " + age + "-year old dog named " + name;
+        return "A " + size + ", " + age + "-year old dog named " + super.getName();
     }
 
-    @Override
+
     // compares dogs by name
-    public int compareTo(Dog otherDog) {
-        return this.name.compareTo(otherDog.getName());
+    public int compareTo(Animal otherDog) {
+        return this.getName().compareTo(otherDog.getName());
     }
 
     public enum DogSize {

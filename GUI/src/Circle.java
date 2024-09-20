@@ -14,6 +14,9 @@ public class Circle implements Comparable<Circle> {
         this.Y = y;
     }
 
+    public void setColor(Color color) {
+        this.color = color;
+    }
     public void setX(int x){
         this.X = x;
     }
@@ -32,6 +35,8 @@ public class Circle implements Comparable<Circle> {
     }
 
     public void draw(Graphics g) {
+
+        g.setColor(color);
         g.fillOval(X, Y, (int)(radius *2), (int) radius *2);
     }
 
