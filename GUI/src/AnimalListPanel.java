@@ -1,12 +1,14 @@
 import Interfaces.Animal;
+import Interfaces.AnimalFilter;
 import Interfaces.Dog;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.*;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 
 public class AnimalListPanel extends JPanel{
@@ -17,9 +19,10 @@ public class AnimalListPanel extends JPanel{
     JComboBox<String> animalComboBox;
     final String[] SORT_OPTIONS = {"ALPHABETICAL", "REVERSE ALPHABETICAL"};
     final String[] DOG_NAMES = {"Fido", "Spot", "Lassie", "Bud", "Snoopy"};
-    final String[] FILTERS = {"S-Dogs", "Long Names", "4-Letter Words"};
     JButton addAnimalButton;
-    ArrayList<JCheckBox> filters;
+    Map<String, Predicate<Animal>> filters;
+    ArrayList<JCheckBox> filterBoxes;
+
 
     public AnimalListPanel() {
         setPreferredSize(new Dimension(750, 1000));
@@ -51,10 +54,14 @@ public class AnimalListPanel extends JPanel{
         controlPanel.add(animalComboBox);
 
         //******** JCheckBox demo  Used for filtering here.
-        // instantiate the list--use a list so it is easier to manage
-        filters = new ArrayList<>();
+        // instantiate the list--use a Map so it is easy to connect the title of the filter to the predicate function.
+        filters = new HashMap<>();
+        // Adding the AnimalFilters pre-mades to the list--could add more.
+        filters.putAll(AnimalFilter.getAnimalFilters());
+        filterBoxes = new ArrayList<>();
         // initialize individual Checkboxes and add to ArrayList
-        for (String filter : FILTERS) {
+        // for (String filter : FILTERS) {
+        for ( String filter : filters.keySet()){
             JCheckBox box = new JCheckBox(filter);
             box.setFont(new Font("Arial", Font.BOLD, 30));
             box.addItemListener(new ItemListener() {
@@ -63,10 +70,10 @@ public class AnimalListPanel extends JPanel{
                     updateDisplay();
                 }
             });
-            filters.add(box);
+            filterBoxes.add(box);
         }
         // Add each checkbox to the controlPanel
-        for (JCheckBox filter : filters)
+        for (JCheckBox filter : filterBoxes)
             controlPanel.add(filter);
         add(controlPanel);
 
@@ -87,23 +94,14 @@ public class AnimalListPanel extends JPanel{
     // improved.  I don't like how the filters are hard-coded into the implementation here.  I think they should
     // be more modular.)
     public boolean isFiltered(Animal animal)  {
-        for (JCheckBox filter : filters) {
-            if (filter.isSelected())
-                switch(filter.getText()) {
-                    case "S-Dogs":
-                        if( animal.getName().startsWith("S") && animal instanceof Dog)
-                            return true;
-                        break;
-                    case "Long Names":
-                        if (animal.getName().length() >= 6)
-                            return true;
-                        break;
-                    case "4-Letter Words":
-                        if (animal.getName().length() == 4)
-                            return true;
-                }
-        }
-        return false;
+        boolean result = false;
+        for (JCheckBox filter : filterBoxes)
+            if (filter.isSelected()) {
+                Predicate<Animal> pred = filters.get(filter.getText());
+                if (pred.test(animal))
+                    result = true;
+            }
+        return result;
     }
 
     // Just adds all the animals to the display panel unless they are filtered.
@@ -116,4 +114,6 @@ public class AnimalListPanel extends JPanel{
         revalidate();
         repaint();
     }
+
+
 }
