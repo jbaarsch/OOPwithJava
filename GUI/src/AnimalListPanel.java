@@ -21,7 +21,6 @@ public class AnimalListPanel extends JPanel{
     JButton addAnimalButton;
     ArrayList<JCheckBox> filters;
 
-
     public AnimalListPanel() {
         setPreferredSize(new Dimension(750, 1000));
         setBackground(Color.BLACK);
@@ -95,8 +94,8 @@ public class AnimalListPanel extends JPanel{
                         if( animal.getName().startsWith("S") && animal instanceof Dog)
                             return true;
                         break;
-                    case "LongNames":
-                        if (animal.getName().length() > 6)
+                    case "Long Names":
+                        if (animal.getName().length() >= 6)
                             return true;
                         break;
                     case "4-Letter Words":
@@ -117,6 +116,4 @@ public class AnimalListPanel extends JPanel{
         revalidate();
         repaint();
     }
-
-
 }
