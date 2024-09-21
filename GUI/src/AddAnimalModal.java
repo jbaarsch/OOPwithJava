@@ -86,7 +86,10 @@ public class AddAnimalModal extends JFrame {
                 }
             }
             attributes.forEach(attr -> {
-                infoCollectorPanel.add(new JLabel(attr.name));
+                attr.value.setFont(Palette.getDisplayFont());
+                JLabel label = new JLabel(attr.name);
+                label.setFont(Palette.getDisplayFont());
+                infoCollectorPanel.add(label);
                 infoCollectorPanel.add(attr.value);
             });
             infoCollectorPanel.revalidate();
