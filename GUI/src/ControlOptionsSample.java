@@ -5,7 +5,7 @@ import java.awt.*;
 import java.util.ArrayList;
 
 
-public class ControlOptionsSample {
+public class  ControlOptionsSample {
 
     public static void main(String[] args) {
 
@@ -17,11 +17,6 @@ public class ControlOptionsSample {
 
         frame.pack();
         frame.setVisible(true);
-
-
-
-
-
 
     }
 

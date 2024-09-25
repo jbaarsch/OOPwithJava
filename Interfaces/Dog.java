@@ -88,6 +88,8 @@ public class Dog extends Animal implements Speaker {
     }
 
 
+
+
     // compares dogs by name
     public int compareTo(Animal otherDog) {
         return this.getName().compareTo(otherDog.getName());
