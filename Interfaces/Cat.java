@@ -5,6 +5,7 @@ public class Cat extends Animal implements Speaker {
     public enum HairLength { HAIRLESS, SHORT_HAIR, MEDIUM_HAIR, LONG_HAIR}
 
     private HairLength hair;
+    private String name;
 
     public String speak() {
         return "Meow";
@@ -12,6 +13,7 @@ public class Cat extends Animal implements Speaker {
 
     public Cat(String n, HairLength h) {
         super(n);
+        name = n + "the Cat";
         hair = h;
     }
 
@@ -22,6 +24,10 @@ public class Cat extends Animal implements Speaker {
 
     public HairLength getHair() {
         return hair;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public void setHair(HairLength hair) {
