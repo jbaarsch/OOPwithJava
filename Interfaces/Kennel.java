@@ -105,8 +105,7 @@ public class Kennel {
             System.out.println(a.getName());
 
 
-
-
+        System.out.println(Cat.HairLength.SHORT_HAIR.getDisplayName());
 
 
 

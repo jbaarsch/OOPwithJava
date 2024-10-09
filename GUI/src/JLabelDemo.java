@@ -33,7 +33,7 @@ public class JLabelDemo {
             ImageIcon img = new ImageIcon("images/penny.jfif");
 
             JLabel imgLabel = new JLabel(img);
-            this.add(imgLabel);
+            //this.add(imgLabel);
             //label.setIcon(img);
             //label.setHorizontalTextPosition(SwingConstants.LEFT);
 
@@ -50,7 +50,15 @@ public class JLabelDemo {
         }
 
 
+        public void paintComponent(Graphics g) {
+            super.paintComponent(g);
 
+            ImageIcon img = new ImageIcon("images/penny.jfif");
+
+            img.paintIcon(this, g, 50, 110);
+
+
+        }
 
 
 
