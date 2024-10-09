@@ -40,7 +40,7 @@ public class Tester {
         cursor.add("Eggplant");
         cursor.add("Fudge");
         cursor.add("Fudge");
-        //cursor.remove();
+        cursor.remove();
         System.out.println(cursor.next());
         System.out.println(cursor.next());
 
