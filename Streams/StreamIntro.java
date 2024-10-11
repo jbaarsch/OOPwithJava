@@ -15,7 +15,7 @@ public class StreamIntro {
 
     public static void main(String[] args) throws IOException {
 
-        String contents = Files.readString(Path.of("ParadiseLost.txt"), StandardCharsets.UTF_8);
+        String contents = Files.readString(Path.of("text_files/ParadiseLost.txt"), StandardCharsets.UTF_8);
         List<String> words = List.of(contents.split("\\PL+"));
 
         // Iteration.
@@ -35,7 +35,7 @@ public class StreamIntro {
 
         ArrayList<Character> vowels = new ArrayList<>(List.of('a', 'A', 'e', 'E', 'i', 'I', 'o', 'O', 'u', 'U'));
         words.stream()
-                .filter(badWords::contains)
+                .filter(w -> {return badWords.contains(w); })
                 .filter( w -> {
                     return vowels.contains(w.charAt(0));
                 })
@@ -55,7 +55,7 @@ public class StreamIntro {
 
     Stream<String> wordFlow = words.stream();
 
-    Map<Integer, String> lengthToString = wordFlow.collect(Collectors.toMap(String::length, s -> s));
+    //Map<Integer, String> lengthToString = wordFlow.collect(Collectors.toMap(String::length, s -> s));
 
 
     }
