@@ -3,7 +3,7 @@ package Lab2GuiHelp;
 import javax.swing.*;
 
 
-public class ControlOptionsSample {
+public class  ControlOptionsSample {
 
     public static void main(String[] args) {
 
@@ -15,11 +15,6 @@ public class ControlOptionsSample {
 
         frame.pack();
         frame.setVisible(true);
-
-
-
-
-
 
     }
 
