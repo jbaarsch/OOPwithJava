@@ -1,7 +1,11 @@
+package Lab2GuiHelp;
+
 import Interfaces.Animal;
 import Interfaces.Cat;
 import Interfaces.Dog;
 import Interfaces.Rooster;
+import GUI_Swing.Palette;
+
 import javax.swing.*;
 import javax.swing.text.JTextComponent;
 import java.awt.*;

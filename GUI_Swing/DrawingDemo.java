@@ -1,8 +1,7 @@
-import jdk.jfr.SettingControl;
+package GUI_Swing;
 
 import javax.swing.*;
 import java.awt.*;
-import java.net.CacheRequest;
 
 public class DrawingDemo {
 

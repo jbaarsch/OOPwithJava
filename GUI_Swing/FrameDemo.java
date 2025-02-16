@@ -1,5 +1,6 @@
+package GUI_Swing;
+
 import javax.swing.*;
-import java.awt.*;
 
 public class FrameDemo {
 

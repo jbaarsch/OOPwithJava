@@ -1,3 +1,5 @@
+package GUI_Swing;
+
 import java.awt.*;
 import javax.swing.*;
 
@@ -30,7 +32,7 @@ public class JLabelDemo {
 
             //this.add(label);
 
-            ImageIcon img = new ImageIcon("images/penny.jfif");
+            ImageIcon img = new ImageIcon("penny.jfif");
 
             JLabel imgLabel = new JLabel(img);
             this.add(imgLabel);

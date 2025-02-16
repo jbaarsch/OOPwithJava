@@ -1,3 +1,5 @@
+package GUI_Swing;
+
 import java.awt.*;
 
 public class Palette {

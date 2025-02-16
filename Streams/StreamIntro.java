@@ -16,7 +16,7 @@ public class StreamIntro {
     public static void main(String[] args) throws IOException {
 
         String contents = Files.readString(Path.of("ParadiseLost.txt"), StandardCharsets.UTF_8);
-        List<String> words = List.of(contents.split("\\PL+"));
+            List<String> words = List.of(contents.split("\\PL+"));
 
         // Iteration.
         long countIter = 0;

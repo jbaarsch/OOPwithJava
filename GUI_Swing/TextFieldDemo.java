@@ -1,3 +1,5 @@
+package GUI_Swing;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -54,7 +56,7 @@ public class TextFieldDemo {
 
                 label.setText("$" + amt);
 
-                label.setIcon(new ImageIcon("images/penny.jfif"));
+                label.setIcon(new ImageIcon("penny.jfif"));
 
 
             }

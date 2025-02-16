@@ -1,3 +1,5 @@
+package Lab2GuiHelp;
+
 import Interfaces.Animal;
 
 import javax.swing.*;

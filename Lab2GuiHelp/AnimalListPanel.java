@@ -1,3 +1,5 @@
+package Lab2GuiHelp;
+
 import Interfaces.Animal;
 import Interfaces.AnimalFilter;
 import Interfaces.Dog;
@@ -8,7 +10,6 @@ import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.util.*;
 import java.util.function.Predicate;
-import java.util.stream.Collectors;
 
 
 public class AnimalListPanel extends JPanel{
@@ -36,17 +37,20 @@ public class AnimalListPanel extends JPanel{
         //******* Add Animal Button -------SIMPLE VERSION------
         addAnimalButton = new JButton("Add Animal");
         addAnimalButton.setFont(new Font("Arial", Font.BOLD, 30));
+
         /*
         addAnimalButton.addActionListener(e -> {
             addAnimal(new Dog(DOG_NAMES[animals.size() % DOG_NAMES.length]));
             });
         */
+        /*
         addAnimalButton.addActionListener(e -> {
             new AddAnimalModal(this);
         });
+        */
         controlPanel.add(addAnimalButton);
 
-
+        /*
         //******** JComboBox Demo--for Sorting
         animalComboBox = new JComboBox(SORT_OPTIONS);
         animalComboBox.setFont(new Font("Arial", Font.BOLD, 30));
@@ -81,7 +85,15 @@ public class AnimalListPanel extends JPanel{
         // Add each checkbox to the controlPanel
         for (JCheckBox filter : filterBoxes)
             controlPanel.add(filter);
+
+        */
         add(controlPanel);
+
+
+
+
+
+
 
         // The DisplayPanel just displays the Animals.
         displayPanel = new JPanel();
@@ -114,7 +126,7 @@ public class AnimalListPanel extends JPanel{
     public void updateDisplay() {
         displayPanel.removeAll();
         for (Animal animal : animals) {
-            if (!isFiltered(animal))
+           // if (!isFiltered(animal))
                 displayPanel.add(new AnimalPanel(animal));
         }
         revalidate();
