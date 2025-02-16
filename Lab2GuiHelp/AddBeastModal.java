@@ -1,6 +1,9 @@
 package Lab2GuiHelp;
 
+import Interfaces.Animal;
+import Interfaces.Cat;
 import Interfaces.Dog;
+import Interfaces.Rooster;
 
 import javax.swing.*;
 import java.awt.*;
@@ -9,7 +12,11 @@ public class AddBeastModal extends JFrame {
 
     private AnimalListPanel animalListPanel;
     private JButton addAnimalButton;
-    AddBeastModal myself;
+    private AddBeastModal myself;
+    private String[] animals = {"Dog", "Cat", "Rooster"};
+    private JComboBox<String> animalSelector;
+    private JPanel infoCollectionPanel;
+
 
     public AddBeastModal(AnimalListPanel animalListPanel) {
 
@@ -28,18 +35,41 @@ public class AddBeastModal extends JFrame {
 
     private class AddAnimalPanel extends JPanel {
         public AddAnimalPanel() {
+            setPreferredSize(new Dimension(500, 500));
+            setBackground(Color.CYAN);
+
+
+            animalSelector = new JComboBox<>(animals);
+            //animalSelector.addActionListener( e -> {
+
+            //});
+            add(animalSelector);
+
+
+            infoCollectionPanel = new JPanel();
+            infoCollectionPanel.setBackground(Color.WHITE);
+            infoCollectionPanel.setPreferredSize(new Dimension(480, 400));
+            add(infoCollectionPanel);
+
             addAnimalButton = new JButton("Add Animal");
             addAnimalButton.addActionListener(e -> {
-                Dog dog = new Dog();
-                animalListPanel.addAnimal(dog);
+                Animal animal = new Dog();
+                switch(animalSelector.getSelectedIndex()) {
+                    case 0: animal = new Dog(); break;
+                    case 1: animal = new Cat(); break;
+                    case 2: animal = new Rooster(); break;
+                }
+
+                animalListPanel.addAnimal(animal);
                 myself.dispose();
             });
 
 
             add(addAnimalButton);
 
-            setPreferredSize(new Dimension(500, 500));
-            setBackground(Color.CYAN);
+
+
+
         }
     }
 

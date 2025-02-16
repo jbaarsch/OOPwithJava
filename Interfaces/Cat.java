@@ -23,7 +23,6 @@ public class Cat extends Animal implements Speaker {
         }
 
     private HairLength hair;
-    private String name;
 
     public String speak() {
         return "Meow";
@@ -31,22 +30,18 @@ public class Cat extends Animal implements Speaker {
 
     public Cat(String n, HairLength h) {
         super(n);
-        name = n + " the Cat";
+
         hair = h;
     }
 
     public Cat() {
         super("Garfield");
-        name = super.getName() + " the Cat";
+
         hair = HairLength.MEDIUM_HAIR;
     }
 
     public HairLength getHair() {
         return hair;
-    }
-
-    public String getName() {
-        return name;
     }
 
     public void setHair(HairLength hair) {
