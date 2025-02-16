@@ -38,16 +38,16 @@ public class AnimalListPanel extends JPanel{
         addAnimalButton = new JButton("Add Animal");
         addAnimalButton.setFont(new Font("Arial", Font.BOLD, 30));
 
-
+        /*
         addAnimalButton.addActionListener(e -> {
             addAnimal(new Dog(DOG_NAMES[animals.size() % DOG_NAMES.length]));
             });
 
-        /*
-        addAnimalButton.addActionListener(e -> {
-            new AddAnimalModal(this);
-        });
         */
+        addAnimalButton.addActionListener(e -> {
+            new AddBeastModal(this);
+        });
+
         controlPanel.add(addAnimalButton);
 
         /*
