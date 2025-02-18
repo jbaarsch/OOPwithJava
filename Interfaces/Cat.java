@@ -27,6 +27,10 @@ public class Cat extends Animal implements Speaker {
     public String speak() {
         return "Meow";
     }
+    public Cat (String n){
+        super(n);
+        hair = HairLength.HAIRLESS;
+    }
 
     public Cat(String n, HairLength h) {
         super(n);
